@@ -1,0 +1,8 @@
+
+<div ng-controller="PartyController">
+    <div class="party" ng-repeat="party in info.results">
+      <a href="#">
+        <span class="from">{{ party.Title }}</span><span class="subject">{{ party.Description }}</span><span class="date">{{ party.Date.iso | date}}</span>
+      </a>
+    </div>
+</div>

@@ -28,6 +28,47 @@ color: #7a7c7f;
   text-shadow:0 1px 1px #fff;
   padding-top:20px;
 }
+
+.party {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 18px;
+    margin: 0 0 8px;
+    padding: 20px 0;
+}
+
+.party:hover {
+    background: #fcfcfc;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.party span {
+    color: #000;
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+}
+.from {
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 2%;
+    width: 20%;
+}
+
+.subject {
+    width: 60%;
+}
+
+.date {
+    font-size: 14px;
+    padding-right: 2%;
+    text-align: right;
+    text-overflow: ellipsis;
+    width: 15%;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 

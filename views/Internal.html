@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand"  style="color:white" href="#">Theta Xi Michigan</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#/Home">Home</a></li>
+            <li><a href="#/Recruitment">Recruitment</a></li>
+            <li><a href="#/Brotherhood">Brotherhood</a></li>
+            <li><a href="#/Alumni">Alumni</a></li>
+            <li><a href="#/Contact">Contact</a></li>
+            <li><a href="#/Internal">Internal Information</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="splash"></div>
+  </head>
+  <body>
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <ul class="nav nav-tabs">
+  <li ng-class="{active: main.active.tab == 'parties'}"><a ng-click='main.active.tab = "parties"'>Parties</a></li>
+  <li ng-class="{active: main.active.tab == 'music'}"><a ng-click='main.active.tab = "music"'>Music</a></li>
+  </ul>
+<div class="tab-content">
+   <div ng-switch on="main.active.tab">
+     <!-- !using ng-if instead of ng-switch-when because angular does not allow ng-include and ng-switch-when in the same element -->
+     <div
+      ng-if="main.active.tab === 'parties'"
+      ng-include='"views/PartyList.html"'></div>
+      <div 
+      ng-if="main.active.tab === 'music'"
+      ng-include='"views/Music.html"'></div>
+   </div>
+</div>
+      </div>
+  </body>
+</html>

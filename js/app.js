@@ -1,4 +1,4 @@
-var app = angular.module('ThetaXiApp', ['ngRoute']);
+var app = angular.module('ThetaXiApp',['ngRoute']);
 app.config(function ($routeProvider) {
   $routeProvider
   	.when('/', {
@@ -15,6 +15,10 @@ app.config(function ($routeProvider) {
   })
   .when('/Alumni',{
     templateUrl:'views/Alumni.html'
+  })
+  .when('/Internal',{
+    controller: "PartyController",
+    templateUrl:'views/Internal.html'
   })
     .otherwise({
     redirectTo: '/'
