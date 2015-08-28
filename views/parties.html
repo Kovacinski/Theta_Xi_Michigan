@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"  style="color:white" href="#">Theta Xi Michigan</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#/Home">Home</a></li>
+              <li><a href="#/Recruitment">Recruitment</a></li>
+              <li><a href="#/Brotherhood">Brotherhood</a></li>
+              <li><a href="#/Alumni">Alumni</a></li>
+              <li><a href="#/Contact">Contact</a></li>
+              <li class="active"><a href="#/Internal">Internal Information</a></li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+        <div class="splash"></div>
+    </head>
+<body>
+<div  class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="row">
+        <div class="box">
+            <hr>
+            <h2 class="intro-text text-center">
+                <strong>{{ detail.Title }} </strong>
+            </h2>
+            <hr>
+            <img src="{{ detail.Cover_img.url }}">
+            <h2 class="section-heading">When?
+                <br>
+                <small>{{detail.Date.iso | date }}</small>
+            </h2>
+            <h2 class="section-heading">Description</h2>
+                <p>{{detail.Description }}</p>
+            <h2 class="section-heading">Sober Monitors</h2>
+            <ul>
+                <div ng-repeat="sober_monitor in detail.Sober_Monitors">
+                    <li>{{ sober_monitor.name}} and {{ sober_monitor.position }}</li>
+                </div>
+            </ul>
+            <h2 class="section-heading">Setup Crew</h2>
+            <ul>
+                <div ng-repeat="member in detail.Setup_Crew">
+                    <li>{{ member }}</li>
+                </div>
+            </ul>
+            <h2 class="section-heading">Clean-up Crew</h2>
+            <ul>
+                <div ng-repeat="clean in detail.Clean_Crew">
+                    <li>{{ clean }}</li>
+                </div>
+            </ul>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>

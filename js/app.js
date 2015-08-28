@@ -20,6 +20,10 @@ app.config(function ($routeProvider) {
     controller: "PartyController",
     templateUrl:'views/Internal.html'
   })
+  .when('/Internal/:id',{
+    controller: "PartyInfoController",
+    templateUrl: "views/parties.html"
+  })
     .otherwise({
     redirectTo: '/'
   });

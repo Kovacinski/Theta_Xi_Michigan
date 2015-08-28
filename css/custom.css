@@ -14,6 +14,22 @@ p {
   line-height: 1.6em;
   font-size: 20px;
 }
+a.back {
+    background: #ffbd1a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    margin: 0 0 20px;
+    padding: 14px 0;
+    text-align: center;
+    width: 200px;
+}
+
+a.back:hover {
+    background: #f7a500;
+    text-decoration: none;
+}
 
 .section-heading {
   font-size: 36px;
@@ -96,4 +112,30 @@ color: #7a7c7f;
 }
 .navbar {
   background-color:#00BFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.intro-text {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+hr {
+    max-width: 400px;
+    border-color: #999999;
 }

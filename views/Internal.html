@@ -14,12 +14,12 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#/Home">Home</a></li>
+            <li><a href="#/Home">Home</a></li>
             <li><a href="#/Recruitment">Recruitment</a></li>
             <li><a href="#/Brotherhood">Brotherhood</a></li>
             <li><a href="#/Alumni">Alumni</a></li>
             <li><a href="#/Contact">Contact</a></li>
-            <li><a href="#/Internal">Internal Information</a></li>
+            <li class="active"><a href="#/Internal">Internal Information</a></li>
           </ul>
         </div>
       </div>
@@ -31,6 +31,7 @@
           <ul class="nav nav-tabs">
   <li ng-class="{active: main.active.tab == 'parties'}"><a ng-click='main.active.tab = "parties"'>Parties</a></li>
   <li ng-class="{active: main.active.tab == 'music'}"><a ng-click='main.active.tab = "music"'>Music</a></li>
+  <li ng-class="{active: main.active.tab == 'cleaning'}"><a ng-click='main.active.tab = "cleaning"'>Cleaning Task's</a></li>
   </ul>
 <div class="tab-content">
    <div ng-switch on="main.active.tab">
@@ -41,6 +42,10 @@
       <div 
       ng-if="main.active.tab === 'music'"
       ng-include='"views/Music.html"'></div>
+      <div 
+      ng-if="main.active.tab === 'cleaning'">
+        <iframe src="https://docs.google.com/spreadsheets/d/1-GcjKiqgyhmTVRdr9-alRHDeguEMOW2Abt5Pl3R3X2M/edit?usp=sharing" style="height: 1000px; width: 1000px"></iframe>
+      </div>
    </div>
 </div>
       </div>

@@ -1,7 +1,11 @@
 
+<div>
+<button type="submit" class="btn btn-primary">Submit</button>
+hello
+</div>
 <div ng-controller="PartyController">
     <div class="party" ng-repeat="party in info.results">
-      <a href="#">
+      <a href="#/Internal/{{$index}}">
         <span class="from">{{ party.Title }}</span><span class="subject">{{ party.Description }}</span><span class="date">{{ party.Date.iso | date}}</span>
       </a>
     </div>
