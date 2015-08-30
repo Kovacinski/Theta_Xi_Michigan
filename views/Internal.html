@@ -29,6 +29,7 @@
   <body>
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <ul class="nav nav-tabs">
+  <li ng-class="{active: main.active.tab == 'calander'}"><a ng-click='main.active.tab = "calander"'>Calander</a></li>
   <li ng-class="{active: main.active.tab == 'parties'}"><a ng-click='main.active.tab = "parties"'>Parties</a></li>
   <li ng-class="{active: main.active.tab == 'music'}"><a ng-click='main.active.tab = "music"'>Music</a></li>
   <li ng-class="{active: main.active.tab == 'cleaning'}"><a ng-click='main.active.tab = "cleaning"'>Cleaning Task's</a></li>
@@ -36,6 +37,10 @@
 <div class="tab-content">
    <div ng-switch on="main.active.tab">
      <!-- !using ng-if instead of ng-switch-when because angular does not allow ng-include and ng-switch-when in the same element -->
+     <div
+      ng-if="main.active.tab === 'calander'">
+       <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=umich.edu_h3icg6k4h7b4t38sovgi1v6tg0%40group.calendar.google.com&amp;color=%232952A3&amp;src=umich.edu_l3cra4mnirpquc3rnlua527k9s%40group.calendar.google.com&amp;color=%232952A3&amp;src=umich.edu_39pvjpgmp2cu10b4snjt39299g%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+     </div>
      <div
       ng-if="main.active.tab === 'parties'"
       ng-include='"views/PartyList.html"'></div>

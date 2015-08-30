@@ -1,4 +1,4 @@
-var app = angular.module('ThetaXiApp',['ngRoute']);
+var app = angular.module('ThetaXiApp',['ngRoute', 'ui.bootstrap']);
 app.config(function ($routeProvider) {
   $routeProvider
   	.when('/', {
