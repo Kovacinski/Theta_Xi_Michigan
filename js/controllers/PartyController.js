@@ -1,24 +1,55 @@
 app.controller('PartyController', ['$scope', 'Parties','$modal', function($scope, Parties, $modal) {
-  $scope.partyName = "";
+  $scope.partyName = "party";
   $scope.partyDescription = "";
   $scope.partyDate;
+  $scope.partyPic;
+  $scope.cleanMembers = [];
+  
+  
   Parties.success(function(data) {
     $scope.info = data;
   });
   $scope.open = function (s) {
       $scope.yep ="yep";
-    $scope.modalInstance = $modal.open({
+    var modalInstance = $modal.open({
+      controller: 'ModalInstanceCtrl',
       templateUrl: 'myModalContent.html',
       scope: $scope
     });
+  
+  modalInstance.result.then(function(message){
+
+    console.log($scope.partyName);
+    console.log($scope.partyDescription);
+    console.log($scope.partyDate);
+    console.log($scope.partyPic);
+    console.log($scope.cleanMembers);
+  });
   };
+}]);
+app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance',
+  function($scope, $modalInstance) {
+    $scope.modCleanMembers = [];
   $scope.ok = function () {
-    $scope.modalInstance.close();
+    $scope.$parent.partyName = $scope.modPartyName;
+    $scope.$parent.partyDescription = $scope.modPartyDescription;
+    $scope.$parent.partyDate = $scope.dt;
+    $scope.$parent.partyPic = $scope.modPartyPic;
+    for(i = 0; i < $scope.modCleanMembers.length; i++ )
+    {
+      $scope.$parent.cleanMembers[i] = $scope.modCleanMembers[i];
+    }
+    //$scope.$parent.cleanMembers = $scope.modCleanMembers;
+    $modalInstance.close();
   };
 
   $scope.cancel = function () {
-    $scope.modalInstance.dismiss('cancel');
+    $modalInstance.dismiss();
   };
+  
+  $scope.cleanAdd = function (input) {
+    $scope.modCleanMembers.push(input);
+  }
   
   // date picker controles -->
   $scope.today = function() {
@@ -57,4 +88,5 @@ app.controller('PartyController', ['$scope', 'Parties','$modal', function($scope
 
     return '';
   };
-}]);
+  }
+]);
