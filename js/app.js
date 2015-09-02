@@ -24,7 +24,24 @@ app.config(function ($routeProvider) {
     controller: "PartyInfoController",
     templateUrl: "views/parties.html"
   })
-    .otherwise({
+  .when('/Login',{
+    controller: "LoginController",
+    templateUrl: "views/login.html"
+  })
+  .otherwise({
     redirectTo: '/'
   });
+});
+app.run( function($rootScope, $location) {
+    Parse.initialize("g8b8gSIVNR9SnXbE2eWtWLB1vqk1KUJGB62bHMKl", "2qZyd26IANjIb7JB9VxF3PIqU6B9pxtBy3UqCO9x");
+    Parse.User.enableRevocableSession()
+    // register listener to watch route changes
+
+    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+      if(next.templateUrl === "views/Internal.html" && !Parse.User.current()){
+        $location.path('/Login');
+      } else {
+        $rootScope.user = Parse.User.current();
+      }
+    });
 });
